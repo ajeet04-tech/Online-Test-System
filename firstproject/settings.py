@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("django-insecure-6&uzb-p8k$f+@7d6&@(z@ya)0iqobl$!k_3+$0bs
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
-    "online-test-system.onrender.com",
+    "online-test-system-2.onrender.com",
     "localhost",
     "127.0.0.1",
 ]
