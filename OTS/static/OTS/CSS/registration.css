@@ -1,0 +1,25 @@
+
+/* REGISTRATION STATUS PAGE */
+
+.status-card {
+    background-color: white;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+}
+
+.status-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.status-card.success .status-icon {
+    color: #16a34a;
+}
+
+.status-card.error .status-icon {
+    color: #dc2626;
+}

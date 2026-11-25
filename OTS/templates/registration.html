@@ -1,0 +1,81 @@
+
+{% extends 'main.html' %}
+
+{% block title %}
+    OTS - Registration Status
+{% endblock %}
+
+{% block top %}
+    <a href="{% url 'OTS:registrationForm' %}">SignUp</a>
+    <a href="{% url 'OTS:login' %}">Login</a>
+    <a href="{% url 'OTS:home' %}">Home</a>
+{% endblock %}
+
+{% block content %}
+
+{% if userStatus == 1 %}
+
+<div class="status-card error">
+
+    <div class="status-icon">
+        &#9888;
+    </div>
+
+    <h2>Username Already Exists!</h2>
+
+    <p>
+        This username is already registered.
+        Please try another username.
+    </p>
+
+    <a href="{% url 'OTS:registrationForm' %}">
+        Try Again
+    </a>
+
+</div>
+
+{% elif userStatus == 2 %}
+
+<div class="status-card success">
+
+    <div class="status-icon">
+        &#10004;
+    </div>
+
+    <h2>Registration Successful!</h2>
+
+    <p>
+        Congratulations! Your OTS account has been
+        created successfully.
+    </p>
+
+    <a href="{% url 'OTS:login' %}">
+        Login Now
+    </a>
+
+</div>
+
+{% elif userStatus == 3 %}
+
+<div class="status-card error">
+
+    <div class="status-icon">
+        &#10006;
+    </div>
+
+    <h2>Improper Request!</h2>
+
+    <p>
+        Something went wrong.
+        Please try again.
+    </p>
+
+    <a href="{% url 'OTS:registrationForm' %}">
+        Back to Registration
+    </a>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

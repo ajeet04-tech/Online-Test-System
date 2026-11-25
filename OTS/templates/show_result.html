@@ -1,0 +1,67 @@
+
+{% extends 'main.html' %}
+
+{% block title %}OTS - Test Result{% endblock title %}
+
+{% block top %}
+<a href="{% url 'OTS:home' %}">Home</a>
+<a href="{% url 'OTS:logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="result-container">
+
+    <div class="result-heading">
+        <h1>Test Result</h1>
+        <p>Here is your examination performance.</p>
+    </div>
+
+    <div class="result-card">
+
+        <div class="result-card-heading">
+            <h2>Performance Summary</h2>
+            <span>Latest Result</span>
+        </div>
+
+        <div class="result-table-wrapper">
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Attempt</th>
+                        <th>Right</th>
+                        <th>Wrong</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for r in results %}
+                    <tr>
+                        <td>{{ r.date }}</td>
+                        <td>{{ r.time }}</td>
+                        <td>{{ r.attempt }}</td>
+                        <td class="right-answer">{{ r.right }}</td>
+                        <td class="wrong-answer">{{ r.worng }}</td>
+                        <td class="points">{{ r.points }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6">No result available yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="result-footer">
+            <a href="{% url 'OTS:home' %}">Back to Dashboard</a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

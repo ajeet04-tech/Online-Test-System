@@ -1,0 +1,85 @@
+
+{% extends 'main.html' %}
+
+{% block title %}OTS - Candidate Result History{% endblock title %}
+
+{% block top %}
+<a href="{% url 'OTS:home' %}">Home</a>
+<a href="{% url 'OTS:logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="history-container">
+
+    <div class="history-heading">
+        <h1>Your Report Card</h1>
+        <p>Track your examination performance and progress.</p>
+    </div>
+
+    <div class="candidate-welcome">
+        <h2>Hello, {{ candidate.name }}!</h2>
+        <p>Here is your overall examination performance.</p>
+    </div>
+
+    <div class="history-stats">
+
+        <div class="history-stat-card">
+            <div class="stat-icon">📝</div>
+            <h3>{{ candidate.test_attempted }}</h3>
+            <p>Tests Attempted</p>
+        </div>
+
+        <div class="history-stat-card">
+            <div class="stat-icon">🏆</div>
+            <h3>{{ candidate.points }}</h3>
+            <p>Total Points</p>
+        </div>
+
+    </div>
+
+    <div class="history-table-card">
+
+        <div class="history-table-heading">
+            <h2>Test History</h2>
+            <span>All Attempts</span>
+        </div>
+
+        <div class="history-table-wrapper">
+
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Attempt</th>
+                        <th>Right</th>
+                        <th>Wrong</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for r in results %}
+                    <tr>
+                        <td>{{ r.date }}</td>
+                        <td>{{ r.time }}</td>
+                        <td>{{ r.attempt }}</td>
+                        <td class="history-right">{{ r.right }}</td>
+                        <td class="history-wrong">{{ r.worng }}</td>
+                        <td class="history-points">{{ r.points }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6">You have not attempted any tests yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

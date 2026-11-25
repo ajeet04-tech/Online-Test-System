@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}
+Welcome to Online Testing System
+{% endblock %}
+
+{% block top %}
+<a href="{% url 'OTS:home' %}">Home</a>
+<a href="{% url 'OTS:registrationForm' %}">SignUp</a>
+<a href="{% url 'OTS:login' %}">Login</a>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <!-- Left Side: Heading and Buttons -->
+    <div class="hero-text">
+
+        <h1>
+            Online
+            <span>Testing System</span>
+        </h1>
+
+        <p>
+            Test your knowledge. Track your progress.
+            Achieve your goals.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'OTS:registrationForm' %}" class="start-btn">
+                Start Test →
+            </a>
+
+            <a href="{% url 'OTS:login' %}" class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side: Student Image -->
+    <div class="hero-image">
+
+        <img src="{% static 'OTS/images/student.png' %}"
+             alt="Student giving online test">
+
+    </div>
+
+</section>
+
+<!-- Features Section -->
+<section class="features">
+
+    <div class="feature-card">
+        <h3>⚡ Instant Results</h3>
+        <p>Get your results immediately.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>📊 Track Progress</h3>
+        <p>Monitor your performance.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>🛡 Secure & Reliable</h3>
+        <p>Your data is safe with us.</p>
+    </div>
+
+</section>
+
+{% endblock %}

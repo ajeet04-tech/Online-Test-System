@@ -1,0 +1,179 @@
+
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}
+    OTS - Candidate Dashboard
+{% endblock title %}
+
+{% block top %}
+    <a href="{% url 'OTS:home' %}">Home</a>
+    <a href="{% url 'OTS:logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <!-- Welcome Section -->
+    <section class="dashboard-welcome">
+
+        <div class="welcome-text">
+            <h1>
+                Welcome,
+                <span>{{ request.session.name }}!</span>
+            </h1>
+
+            <p>
+                Attempt tests, check your results and improve your skills.
+            </p>
+
+            <h3>Your performance is our priority!</h3>
+        </div>
+
+        <div class="welcome-illustration">
+            <div class="student-icon">
+              <img src="{% static 'OTS/images/student.png' %}"
+                    alt="Student giving online test">
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Available Tests Section -->
+    <section class="available-tests">
+
+        <div class="section-heading">
+            <h2>Available Tests</h2>
+        </div>
+
+        <div class="test-cards">
+
+            <!-- 1 Question Test -->
+            <div class="test-card easy">
+
+                <div class="test-icon">📋</div>
+
+                <div class="test-info">
+                    <h2>1 Question Test</h2>
+                    <p>Attempt a quick test with 1 question.</p>
+                    <span class="test-time">◷ 5 Minutes</span>
+                </div>
+
+                <span class="difficulty">Easy</span>
+
+                <a href="{% url 'OTS:testPaper' %}?n=1"
+                   class="start-test">
+                    ▶ Start Test
+                </a>
+
+            </div>
+
+
+            <!-- 3 Questions Test -->
+            <div class="test-card medium">
+
+                <div class="test-icon">📋</div>
+
+                <div class="test-info">
+                    <h2>3 Questions Test</h2>
+                    <p>Attempt a test with 3 questions.</p>
+                    <span class="test-time">◷ 10 Minutes</span>
+                </div>
+
+                <span class="difficulty">Medium</span>
+
+                <a href="{% url 'OTS:testPaper' %}?n=3"
+                   class="start-test">
+                    ▶ Start Test
+                </a>
+
+            </div>
+
+
+            <!-- 5 Questions Test -->
+            <div class="test-card hard">
+
+                <div class="test-icon">📋</div>
+
+                <div class="test-info">
+                    <h2>5 Questions Test</h2>
+                    <p>Attempt a test with 5 questions.</p>
+                    <span class="test-time">◷ 15 Minutes</span>
+                </div>
+
+                <span class="difficulty">Hard</span>
+
+                <a href="{% url 'OTS:testPaper' %}?n=5"
+                   class="start-test">
+                    ▶ Start Test
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Test History Section -->
+    
+
+<section class="history-section">
+
+    <div class="section-heading">
+        <div>
+            <h2>Test History</h2>
+            <span class="history-subtitle">
+                Your recent test attempts
+            </span>
+        </div>
+
+        <a href="{% url 'OTS:testResultHistory' %}"
+           class="view-history">
+            View All →
+        </a>
+    </div>
+
+    <div class="history-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Test ID</th>
+                    <th>Date</th>
+                    <th>Questions</th>
+                    <th>Correct</th>
+                    <th>Wrong</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result.resultid }}</td>
+                    <td>{{ result.date }}</td>
+                    <td>{{ result.attempt }}</td>
+                    <td>{{ result.right }}</td>
+                    <td>{{ result.worng }}</td>
+                    <td>{{ result.points }}</td>
+                </tr>
+
+                {% empty %}
+                <tr>
+                    <td colspan="6">
+                        No test history available.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+
+
+</div>
+
+{% endblock %}

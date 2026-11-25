@@ -1,0 +1,111 @@
+
+/* RESULT PAGE */
+
+.result-container {
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.result-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.result-heading h1 {
+    color: #172554;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.result-heading p {
+    color: #64748b;
+}
+
+.result-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.result-card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.result-card-heading h2 {
+    color: #1e293b;
+    font-size: 21px;
+}
+
+.result-card-heading span {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.result-table-wrapper {
+    overflow-x: auto;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.result-table th {
+    background: #eff6ff;
+    color: #1e3a8a;
+    padding: 16px 12px;
+    font-size: 14px;
+}
+
+.result-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+}
+
+.result-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.right-answer {
+    color: #16a34a !important;
+    font-weight: bold;
+}
+
+.wrong-answer {
+    color: #dc2626 !important;
+    font-weight: bold;
+}
+
+.points {
+    color: #2563eb !important;
+    font-weight: bold;
+}
+
+.result-footer {
+    margin-top: 25px;
+    text-align: right;
+}
+
+.result-footer a {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.result-footer a:hover {
+    background: #1d4ed8;
+}

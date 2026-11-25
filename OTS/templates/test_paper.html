@@ -1,0 +1,88 @@
+
+{% extends 'main.html' %}
+
+{% block title %}
+    OTS - Online Test
+{% endblock title %}
+
+{% block top %}
+    <a href="{% url 'OTS:home' %}">Dashboard</a>
+    <a href="{% url 'OTS:logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="test-container">
+
+    <div class="test-header">
+        <h1>Online Examination</h1>
+        <p>Read each question carefully and select your answer.</p>
+    </div>
+
+    <form action="{% url 'OTS:calculateTestResult' %}" method="post">
+
+        {% csrf_token %}
+
+        {% for question in questions %}
+
+        <div class="question-card">
+
+            <div class="question-title">
+                <span class="question-number">
+                    Question {{ forloop.counter }}
+                </span>
+            </div>
+
+            <input type="hidden"
+                   name="qno{{ question.qid }}"
+                   value="{{ question.qid }}">
+
+            <h3>{{ question.que }}</h3>
+
+            <div class="options">
+
+                <label class="option">
+                    <input type="radio"
+                           name="q{{ question.qid }}"
+                           value="a">
+                    <span>{{ question.a }}</span>
+                </label>
+
+                <label class="option">
+                    <input type="radio"
+                           name="q{{ question.qid }}"
+                           value="b">
+                    <span>{{ question.b }}</span>
+                </label>
+
+                <label class="option">
+                    <input type="radio"
+                           name="q{{ question.qid }}"
+                           value="c">
+                    <span>{{ question.c }}</span>
+                </label>
+
+                <label class="option">
+                    <input type="radio"
+                           name="q{{ question.qid }}"
+                           value="d">
+                    <span>{{ question.d }}</span>
+                </label>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="submit-section">
+            <button type="submit" class="submit-test">
+                Submit Test
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

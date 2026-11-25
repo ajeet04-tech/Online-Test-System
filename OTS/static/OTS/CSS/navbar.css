@@ -1,0 +1,38 @@
+
+/* NAVBAR DESIGN */
+
+.navbar {
+    background-color: #142b52;
+    color: white;
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 55px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* LOGO DESIGN */
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: color 0.3s ease;
+}
+
+/* NAVIGATION LINKS */
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}

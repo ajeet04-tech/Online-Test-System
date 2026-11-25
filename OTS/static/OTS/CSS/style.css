@@ -1,0 +1,25 @@
+
+/* GLOBAL CSS */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.content {
+    padding: 60px 50px;
+    background-color: #f4f7fc;
+    min-height: 80vh;
+}
+
+/* MOBILE CONTENT */
+
+@media (max-width: 480px) {
+    .content {
+        padding: 25px 15px;
+    }
+}

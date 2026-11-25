@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'OTS/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/welcome.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/registration.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/test_paper.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/result.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/history.css' %}">
+    <link rel="stylesheet" href="{% static 'OTS/css/responsive.css' %}">
+
+</head>
+<body>
+   <header class="navbar">
+
+    <div class="logo">
+        🎓 OTS
+    </div>
+
+    <nav class="nav-links">
+        {% block top %}{% endblock %}
+    </nav>
+
+</header>
+ <div class="content">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

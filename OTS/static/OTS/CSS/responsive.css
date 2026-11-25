@@ -1,0 +1,142 @@
+
+/* RESPONSIVE DESIGN */
+
+/* WELCOME PAGE */
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* FORMS */
+
+@media (max-width: 480px) {
+    .all-forms {
+        width: 100%;
+        max-width: 350px;
+        padding: 25px;
+    }
+
+    .content {
+        padding: 25px 15px;
+    }
+}
+
+/* DASHBOARD */
+
+@media (max-width: 900px) {
+    .test-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-welcome {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .test-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-welcome {
+        padding: 25px 18px;
+    }
+
+    .welcome-text h1 {
+        font-size: 27px;
+    }
+
+    .welcome-illustration {
+        flex-direction: column;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+}
+
+/* TEST PAPER */
+
+@media (max-width: 600px) {
+    .test-header {
+        padding: 22px;
+    }
+
+    .test-header h1 {
+        font-size: 24px;
+    }
+
+    .question-card {
+        padding: 18px;
+    }
+
+    .question-card h3 {
+        font-size: 17px;
+    }
+
+    .submit-test {
+        width: 100%;
+    }
+}
+
+/* RESULT PAGE */
+
+@media (max-width: 600px) {
+    .result-card {
+        padding: 15px;
+    }
+
+    .result-card-heading {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .result-table th,
+    .result-table td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+}
+
+/* HISTORY PAGE */
+
+@media (max-width: 600px) {
+    .history-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .history-table-card {
+        padding: 15px;
+    }
+
+    .history-table th,
+    .history-table td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .history-table-heading {
+        gap: 10px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
