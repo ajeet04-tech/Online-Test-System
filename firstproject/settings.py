@@ -27,10 +27,13 @@ load_dotenv(BASE_DIR / ".env")
 SECRET_KEY = os.getenv("django-insecure-6&uzb-p8k$f+@7d6&@(z@ya)0iqobl$!k_3+$0bs2tn8vp^jnu")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "online-test-system.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
